@@ -1,0 +1,28 @@
+window.addEventListener(`DOMContentLoaded`,function(){
+filter$$default$measure='px'
+document.querySelectorAll(`[filterr=true]`).forEach(all=>{
+filter$$all =[]    
+    if(all.getAttribute(`blur`)!=null){
+    filter$$all.push(`blur(${all.getAttribute(`blur`)+filter$$default$measure})`)
+ }
+ if(all.getAttribute(`brightness`)!=null){
+    filter$$all.push(`brightness(${all.getAttribute(`brightness`)})`)
+ } 
+ if(all.getAttribute(`contrast`)!=null){
+    filter$$all.push(`contrast(${all.getAttribute(`contrast`)})`)
+ }
+ if(all.getAttribute(`saturate`)!=null){
+    filter$$all.push(`saturate(${all.getAttribute(`saturate`)})`)
+ }
+ if(all.getAttribute(`dropshadow`)!=null){
+    filter$$all.push(`dropshadow(${all.getAttribute(`dropshadow`)})`)
+ }
+ if(all.getAttribute(`grayscale`)!=null){
+    filter$$all.push(`grayscale(${all.getAttribute(`grayscale`)})`)
+ }
+ if(all.getAttribute(`opacity`)!=null){
+    filter$$all.push(`opacity(${all.getAttribute(`opacity`)})`)
+ }
+ all.style.filter=filter$$all.join('')
+})
+})
