@@ -1,3 +1,4 @@
+window.addEventListener(`DOMContentLoaded`,function(){
 function timeahh(){
     const $time$$updated= new Date()
     let $time$$hours=$time$$updated.getHours()
@@ -13,3 +14,4 @@ document.querySelectorAll(`[tromoSM=fill-time]`).forEach(fill=>{
 }
 timeahh()
 setInterval(timeahh,100)
+})
