@@ -1,0 +1,55 @@
+[tromoSM="ui-main-w"]{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+flex-direction: column;
+}
+[top='0']{
+    margin-top: 100px !important;
+}
+[tromoSM=wrap]{
+    display: flex;
+    margin:0px  0px  0px 50px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+[tromoSM=background-main]{
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+}
+[tromoSM=background-top]{
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+}
+[tromoSM=fill-time]{
+    font-family: SF Pro;
+    font-weight: 700;
+    padding: 0;
+    color: var(--element-display-text);
+    font-size: 110px;
+    width: fit-content;
+    text-shadow: 0px 0px 20px var(--element-display-text-shadow);
+}
+[tromoSM=weather-w]{
+    background-color: var(--element-1-background-color);
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-wrap: nowrap;
+    color: var(--element-1-color);
+    align-items: center;
+    border-radius: var(--element-1-border-radius);
+    backdrop-filter: blur(15px);
+}
+[tromoSM="fill-temp"]{
+    font-size: 80px;
+    margin-left: 10px;
+}
