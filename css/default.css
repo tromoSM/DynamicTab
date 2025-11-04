@@ -1,4 +1,9 @@
 html,body{
     padding: 0;
     margin: 0;
+    font-family: var(--document-font-family-main);
+}
+p{
+    padding: 0;
+    margin: 0;
 }
