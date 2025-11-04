@@ -1,0 +1,13 @@
+:root{
+   /*document-ahh*/
+    --document-font-family-main:inter;
+
+   /*element class 1*/ 
+    --element-1-border-radius : 15px;
+    --element-1-background-color:rgba(0, 0, 0, 0.151);
+    --element-1-color:white;
+    
+    /*UI Element - colors*/
+    --element-display-text:white;
+    --element-display-text-shadow:#00000067;
+}
