@@ -44,6 +44,8 @@ let long
       loc.innerHTML=`<img src="visual/UI/icons/location.svg" tromoSM="location-ic">${lat},${long}`
     })
    })
+   document.querySelector(`[tromoSM=fill-info]`).innerHTML=`Updated at ${dih.current.time.slice(-5)}`
+
 })
 })
 })
