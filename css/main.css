@@ -140,12 +140,6 @@ flex-direction: column;
         opacity: 1;
     }
 }
-[tromoSM=moon]{
-position: absolute;
-width: 70px;
-bottom: 0;
-right: 0;
-}
 [tromoSM="fill-temp"]{
     font-size: 80px;
     display: flex;
@@ -270,6 +264,7 @@ right: 0;
     position: static;
     margin: 0px 1px;
     padding: 5px;
+    filter: brightness(10);
     background-color: var(--element-1-background-color);
     animation: open-ic-av 0.2s forwards 1;
 }
