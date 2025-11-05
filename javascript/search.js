@@ -12,4 +12,6 @@ function lastcall(){
  document.querySelector(`[tromosm="enter-in-main"]`).addEventListener("click",function(){
         lastcall()
  })
+document.querySelector(`[fill=search-engine]`).src="visual/UI/icons/icon-search-eng-google.png"
+document.querySelector(`[fill="search-engine-r"]`).textContent="▾"//needs a change.find some unicode for dis
 })
