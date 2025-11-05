@@ -1,12 +1,14 @@
 :root{
    /*document-all*/
-    --document-font-family-main:inter;
+    --document-font-family-main:SF Pro;
 
    /*element class 1*/ 
     --element-1-border-radius : 15px;
     --element-1-background-color:rgba(0, 0, 0, 0.151);
+    --element-1-background-color-action-h:rgba(0, 0, 0, 0.301);
+    --element-1-night-background-color:rgba(6, 19, 54, 0.692);
     --element-1-color:white;
-    --element-1-backdrop-blur:15px;
+    --element-1-backdrop-blur:20px;
     
     /*UI Element - colors*/
     --element-display-text:white;
