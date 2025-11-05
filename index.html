@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <link rel="stylesheet" href="css/root.css">
+ <link rel="stylesheet" href="css/default.css">
+ <link rel="stylesheet" href="css/main.css">
+ <link rel="stylesheet" href="css/tromoSM-style.css">
+
+ <script src="javascript/search.js"></script>
+ <script src="javascript/filters.js"></script>
+ <script src="javascript/time.js"></script>
+ <script src="javascript/ui-drag.js"></script>
+ <script src="javascript/emmet-autocss.js"></script>
+ <script src="javascript/weather.js"></script>
+ <script src="javascript/recent-tabs.js"></script>
+ </head>
+  <!---
+  FOR LIVE WALLPAPER - MAKE AUTO ON MP4 UPLOAD
+   <video autoplay muted tromoSM="background-main" filterr="true" blur="0" saturate="1" brightness="1" loop >
+     <source src="visual/backgrounds/.mp4" >
+   </video>
+  -->
+   <img   tromoSM="background-main" filterr="true" blur="0" saturate="1.1" src="visual/backgrounds/fallback.jpg" brightness="1" loop >
+ <body>
+  <div tromoSM="ui-main-w">
+    <div tromoSM="wrap" top="0">
+     <p tromoSM="fill-time" emmet-left="1">00.00</p>
+    </div>
+    <div tromoSM="wrap" pos="abs-r-t">
+      <div tromoSM="weather-w">
+        <p tromoSM="fill-temp">0</p>
+        <p tromoSM="fill-location"></p>
+      </div>
+    </div>  
+    <div tromoSM="wrap-all">
+      <div tromoSM="inp-wrap">
+        <input type="text" placeholder="Search with google" tromoSM="search-in">
+        <button tromoSM="enter-in-main">search</button>
+      </div>
+    </div>
+  </div>  
+ </body>
+</html>
+<!----->
