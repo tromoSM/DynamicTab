@@ -13,4 +13,10 @@
     /*UI Element - colors*/
     --element-display-text:white;
     --element-display-text-shadow:#00000067;
+
+    /*FILTERs for icons social*/
+    --icon-filter-dark-themed:opacity(0.5) brightness(0);
+    --icon-filter-light-themed:opacity(1) brightness(100);
+    --icon-filter-default:opacity(1) brightness(1);
+
 }
