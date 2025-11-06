@@ -1,5 +1,15 @@
 window.addEventListener(`DOMContentLoaded`,function(){
-let lat
+
+  if(localStorage.getItem("temp-old")!=null){
+ document.querySelector(`[tromoSM="fill-temp"]`).textContent=localStorage.getItem("temp-old");
+ document.querySelector(`[tromoSM=fill-info]`).innerHTML='Updated at '+localStorage.getItem("time-old");
+
+}
+else{
+ document.querySelector(`[tromoSM=fill-info]`).innerHTML='please wait...'
+ document.querySelector(`[tromoSM="fill-temp"]`).textContent='20';
+}
+ let lat
 let long
    navigator.geolocation.getCurrentPosition((gurt)=>{
    lat=gurt.coords.latitude
@@ -16,7 +26,9 @@ let long
       weather$$p.textContent=`℃`
       weather$$c.setAttribute(`tromoSM`,`flex-upper-w`)
       weather$$p.setAttribute(`tromoSM`,`temp-mes`)
-      
+      localStorage.setItem("temp-old",parseInt(dih.current.temperature_2m) );
+      localStorage.setItem("time-old", dih.current.time.slice(-5) );
+    
     if(dih.current.is_day==0){
       weather$$str=document.createElement(`img`)
       document.querySelector(`[tromoSM="weather-w"]`).appendChild(weather$$str)
