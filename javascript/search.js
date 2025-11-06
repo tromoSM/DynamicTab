@@ -2,7 +2,9 @@ let available_src_eng=['google','bing',`wikipedia`,`duckduckgo`,`github`]
 let search$$load = false;
 let search_eng ='google'
 window.addEventListener(`DOMContentLoaded`,function(){
-function lastcall(){
+document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Search with ${search_eng}`)
+
+   function lastcall(){
    search$$load=true
    if(document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","")!=""){
     if(search_eng=="google"){
@@ -36,7 +38,7 @@ document.querySelector(`[fill="search-engine-r"]`).textContent=""//needs a chang
 }
 refresh$$at_c_on_change()
    let o=0
-document.querySelector(`[tromoSM="search-engine"]`).addEventListener('click',function(){
+  window.searchEng$$main = function() {
    if(o==0){
       icc=document.createElement(`div`)
 
@@ -52,12 +54,15 @@ document.querySelector(`[tromoSM="search-engine"]`).addEventListener('click',fun
       icc.appendChild(ic)
       o=5
       refresh$$at_c_on_change()
+       document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Search with ${search_eng}`)
      }
    })}
    else{
       refresh$$at_c_on_change()
        icc.style.display='none'
+       document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Search with ${search_eng}`)
        o=0
    }
-})
+}
+document.querySelector(`[tromoSM="search-engine"]`).addEventListener('click',searchEng$$main)
 })
