@@ -1,4 +1,4 @@
-let available_src_eng=['google','bing',`wikipedia`,`duckduckgo`,`github`,'chatgpt']
+let available_src_eng=['google','bing',`wikipedia`,`duckduckgo`,`github`,'chatgpt','url']
 let search$$load = false;
 let search_eng ='google'
 window.addEventListener(`DOMContentLoaded`,function(){
@@ -25,9 +25,21 @@ document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Sea
     else if(search_eng=="chatgpt"){
       window.open(`https://chat.openai.com/?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
     }
-    
+    else if(search_eng=="url"){
+    if(document.querySelector(`[tromoSM="search-in"]`).value.includes(`https://`)){
+      window.open(`${document.querySelector(`[tromoSM="search-in"]`).value.slice(8)}`,'_self')
+    }
+    else if(document.querySelector(`[tromoSM="search-in"]`).value.includes(`http://`)){
+      window.open(`${document.querySelector(`[tromoSM="search-in"]`).value.slice(7)}`,'_self')
+    }
+    else if(document.querySelector(`[tromoSM="search-in"]`).value.includes(" ")){
+      window.open(`https://www.google.com/search?client=DynamicTab-b-d&q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+    else{
+      window.open(`https://${document.querySelector(`[tromoSM="search-in"]`).value}`,'_self')
+    }
    }
- }
+ }}
  document.querySelector(`[tromosm="search-in"]`).addEventListener(`keydown`,function(gurt){
     if(gurt.key=="Enter"){
         lastcall()
@@ -38,7 +50,7 @@ document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Sea
  })
 function refresh$$at_c_on_change(){ 
 document.querySelector(`[fill=search-engine]`).src=`visual/UI/icons/icon-search-eng-${search_eng}.png`
-document.querySelector(`[fill="search-engine-r"]`).textContent=""//needs a change.find some unicode for dis
+document.querySelector(`[fill="search-engine-r"]`).textContent=""
 }
 refresh$$at_c_on_change()
    let o=0
@@ -58,13 +70,21 @@ refresh$$at_c_on_change()
       icc.appendChild(ic)
       o=5
       refresh$$at_c_on_change()
-       document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Search with ${search_eng}`)
+     if(search$$load=='url'){
+          document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Enter url to visit`)}
+      else{
+          document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Search with ${search_eng}`)
+      }
      }
    })}
    else{
       refresh$$at_c_on_change()
        icc.style.display='none'
-       document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Search with ${search_eng}`)
+       if(search$$load=='url'){
+          document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Enter url to visit`)}
+      else{
+          document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Search with ${search_eng}`)
+      }
        o=0
    }
 }
