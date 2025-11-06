@@ -1,7 +1,9 @@
 let available_src_eng=['google','bing',`wikipedia`,`duckduckgo`,`github`]
+let search$$load = false;
 let search_eng ='google'
 window.addEventListener(`DOMContentLoaded`,function(){
 function lastcall(){
+   search$$load=true
    if(document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","")!=""){
     if(search_eng=="google"){
       window.open(`https://www.google.com/search?client=DynamicTab-b-d&q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
@@ -30,7 +32,7 @@ function lastcall(){
  })
 function refresh$$at_c_on_change(){ 
 document.querySelector(`[fill=search-engine]`).src=`visual/UI/icons/icon-search-eng-${search_eng}.png`
-document.querySelector(`[fill="search-engine-r"]`).textContent=" ▾ "//needs a change.find some unicode for dis
+document.querySelector(`[fill="search-engine-r"]`).textContent=""//needs a change.find some unicode for dis
 }
 refresh$$at_c_on_change()
    let o=0
