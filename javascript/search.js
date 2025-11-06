@@ -1,4 +1,4 @@
-let available_src_eng=['google','bing',`wikipedia`,`duckduckgo`,`github`]
+let available_src_eng=['google','bing',`wikipedia`,`duckduckgo`,`github`,'chatgpt']
 let search$$load = false;
 let search_eng ='google'
 window.addEventListener(`DOMContentLoaded`,function(){
@@ -22,6 +22,10 @@ document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Sea
     else if(search_eng=="github"){
       window.open(`https://github.com/search?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}&ref=opensearch&type=repositories`,'_self')
     }
+    else if(search_eng=="chatgpt"){
+      window.open(`https://chat.openai.com/?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+    
    }
  }
  document.querySelector(`[tromosm="search-in"]`).addEventListener(`keydown`,function(gurt){
