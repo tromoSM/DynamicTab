@@ -5,6 +5,7 @@ function timeahh(){
     let $time$$mins=$time$$updated.getMinutes()
 
 $time$$mins=$time$$mins<10?`0`+$time$$mins:$time$$mins
+$time$$hours=$time$$hours<10?`0`+$time$$hours:$time$$hours
 console.log($time$$hours,$time$$mins)
 
 
@@ -13,5 +14,5 @@ document.querySelectorAll(`[tromoSM=fill-time]`).forEach(fill=>{
 })
 }
 timeahh()
-setInterval(timeahh,100)
+setInterval(timeahh,500)
 })
