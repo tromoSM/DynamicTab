@@ -39,6 +39,7 @@ b.appendChild(irb)
 
 function close$$toolpref(){
 document.querySelector(`[ytsd=gg]`).style.display="none"
+    close$$$toolpref.style.display="none"
 }
 
 window.addEventListener("keydown",function(ahh){
