@@ -47,6 +47,8 @@ if(ahh.key=="Escape"){
     close$$toolpref()
 }
 })
-close$$$toolpref.addEventListener("click",close$$toolpref)
-close$$$toolpref.stopPropagation()
+close$$$toolpref.addEventListener("click",function(vro){
+vro.stopPropagation()
+close$$toolpref()
+})
 })
