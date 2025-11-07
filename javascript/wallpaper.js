@@ -1,0 +1,28 @@
+window.addEventListener("DOMContentLoaded",function(){
+if(localStorage.getItem("imim_data_wallpaper_type")){
+ if(localStorage.getItem("imim_data_wallpaper_type")=="img"){
+    main=document.createElement("img")
+    main.setAttribute("tromoSM",`background-main`)
+    main.src=localStorage.getItem("imim_data_wallpaper")
+    document.body.appendChild(main)
+   }
+    else{
+    main=document.createElement("video")
+    appendedsource=document.createElement("source")
+    main.setAttribute("tromoSM",`background-main`)
+    main.setAttribute("autoplay",``)
+    main.setAttribute("muted",``)
+    main.setAttribute("playsinline",``)
+    main.setAttribute("loop",``)
+    appendedsource.src=localStorage.getItem("imim_data_wallpaper")
+    main.appendChild(appendedsource)
+    document.body.appendChild(main)
+    }
+}
+else{
+    main=document.createElement("img")
+    main.setAttribute("tromoSM",`background-main`)
+    main.src='visual/backgrounds/fallback.jpg'
+    document.body.appendChild(main)
+}
+})
