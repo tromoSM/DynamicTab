@@ -1,4 +1,4 @@
-pref$$setting=['change wallpaper','change theme']
+pref$$setting=['change wallpaper','wallpaper styling']
 window.addEventListener('DOMContentLoaded',function(){
 prefTool$$1=document.createElement(`div`)
 prefTool$$3=document.createElement(`div`)
@@ -15,13 +15,22 @@ close$$$toolpref=document.createElement(`button`)
 document.body.appendChild(close$$$toolpref)
 close$$$toolpref.setAttribute(`tromoSM`,`close$preff`)
 close$$$toolpref.innerHTML="×"
+ti=document.createElement('p')
+ti.innerHTML="Preferences"
+ti.setAttribute('tromoSM','ti-preff-main')
+prefTool$$3.appendChild(ti)
 pref$$setting.forEach(yo=>{
 b=document.createElement(`button`)
 irb=document.createElement(`button`)
 g=document.createElement(`img`)
-if(yo=="change wallpaper"||yo=="change theme"){
+if(yo.slice(0,6)=="change"){
     irb.innerHTML="change"
     irb.setAttribute(`action`,`file-$-${yo.slice(7)}`)
+}
+else if(yo=="wallpaper styling"){
+    irb.innerHTML="not available"
+    irb.style.opacity="0.5"
+    irb.style.pointerEvents="none"
 }
 prefTool$$1.addEventListener('click',function(){
 prefTool$$3.style.display="flex"
@@ -29,6 +38,9 @@ close$$$toolpref.style.display="flex"
 })
 p=document.createElement(`p`)
 g.src=`visual/UI/icons/pref-${yo.replace(" ","-")}.svg`
+g.onerror=()=>{
+g.src=`visual/UI/icons/settings.svg`
+}
 p.textContent=yo
 b.setAttribute(`tromoSM`,`bttn-appnd-op-preff`)
 prefTool$$3.appendChild(b)
