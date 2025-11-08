@@ -190,6 +190,7 @@ flex-direction: column;
     object-fit: cover;
     position: fixed;
     top: 0;
+    animation: open-bg-main 0.6s 1 ;
 }
 [tromoSM=background-top]{
     width: 100vw;
