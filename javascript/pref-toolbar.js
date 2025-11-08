@@ -1,4 +1,4 @@
-pref$$setting=['change wallpaper','wallpaper styling']
+pref$$setting=['change favicon','change wallpaper','wallpaper styling']
 window.addEventListener('DOMContentLoaded',function(){
 prefTool$$1=document.createElement(`div`)
 prefTool$$3=document.createElement(`div`)
