@@ -1,4 +1,4 @@
-pref$$setting=['change favicon','change wallpaper','wallpaper styling']
+pref$$setting=['change favicon','change wallpaper','add search engines','wallpaper styling']
 window.addEventListener('DOMContentLoaded',function(){
 prefTool$$1=document.createElement(`div`)
 prefTool$$3=document.createElement(`div`)
@@ -31,6 +31,14 @@ else if(yo=="wallpaper styling"){
     irb.innerHTML="not available"
     irb.style.opacity="0.5"
     irb.style.pointerEvents="none"
+}
+else if(yo=="add search engines"){
+    irb.innerHTML=search_eng_default.charAt(0).toUpperCase()+search_eng_default.slice(1)
+    let y=document.createElement("img")
+    y.src="visual/UI/icons/chevron-arrow-head-open.svg"
+    irb.appendChild(y)
+    y.setAttribute('tromoSM','im-im-bttn-in')
+    irb.setAttribute(`action`,`file-$-${yo.replaceAll(" ","_")}`)
 }
 prefTool$$1.addEventListener('click',function(){
 prefTool$$3.style.display="flex"
