@@ -86,5 +86,64 @@ window.addEventListener(`DOMContentLoaded`,function(){
   })
     
  }
+
+ else if(a=="file-$-add_search_engines"){
+document.querySelector(`[action="file-$-add_search_engines"]`).addEventListener('click',function(){
+
+  let available_src_eng_all=['google','bing',`wikipedia`,`duckduckgo`,`github`,'chatgpt','youtube','instagram','yahoo','url']
+  let full_S=document.createElement("div")
+  full_S.setAttribute("tromoSM",'full-s-notiff')
+  let all0=document.createElement("div")
+  document.body.appendChild(full_S)
+  full_S.appendChild(all0)  
+ let close$$$toolpref=document.createElement(`button`)
+ full_S.appendChild(close$$$toolpref)
+ close$$$toolpref.addEventListener("click",function(){
+    full_S.remove()
+ })
+ close$$$toolpref.setAttribute(`tromoSM`,`close$preff`)
+ close$$$toolpref.innerHTML="×"
+ close$$$toolpref.style.display="flex"
+  all0.setAttribute("tromoSM",'av-tab-src')
+  available_src_eng_all.forEach(yo=>{
+  let mini0=document.createElement("div")
+  mini0.setAttribute('tromoSM','append-all-av')
+  all0.appendChild(mini0)
+  mini0.innerText=yo
+  let in_mini0=document.createElement("input")
+
+  if(yo==search_eng_default){
+  in_mini0.setAttribute("type","radio")
+  in_mini0.setAttribute("start","doubleindex")
+  }
+  else{
+  in_mini0.setAttribute("type","checkbox")
+  }
+  in_mini0.setAttribute("tromoSM","in-radio-ap")
+  if(available_src_eng.includes(yo)){
+   in_mini0.setAttribute("checked","")
+   in_mini0.setAttribute("gurt","1")
+  }
+  in_mini0.setAttribute('action-dump', yo)
+  mini0.appendChild(in_mini0)
+  mini0.addEventListener('click',function(){
+  in_mini0.click()
+})
+ in_mini0.addEventListener('click',function(e){
+    e.stopPropagation()
+   if(in_mini0.getAttribute('gurt')=="1"){
+    available_src_eng.splice(available_src_eng.indexOf(yo),1)   
+}
+   else{
+   available_src_eng.push(yo)
+   }
+
+ localStorage.setItem('pref-data-search-eng',JSON.stringify(available_src_eng))
+
+ })
+  })
+})
+ }
+
  })
 })
