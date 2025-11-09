@@ -90,7 +90,7 @@ window.addEventListener(`DOMContentLoaded`,function(){
  else if(a=="file-$-add_search_engines"){
 document.querySelector(`[action="file-$-add_search_engines"]`).addEventListener('click',function(){
 
-  let available_src_eng_all=['google','bing',`wikipedia`,`duckduckgo`,`github`,'chatgpt','youtube','instagram','yahoo','url']
+  let available_src_eng_all=['google','bing',`wikipedia`,`duckduckgo`,`github`,'chatgpt','youtube','instagram','yahoo','yt music','spotify','ecosia','reddit',`quora`,'stack overflow','twitter','url']
   let full_S=document.createElement("div")
   full_S.setAttribute("tromoSM",'full-s-notiff')
   let all0=document.createElement("div")
@@ -106,10 +106,16 @@ document.querySelector(`[action="file-$-add_search_engines"]`).addEventListener(
  close$$$toolpref.style.display="flex"
   all0.setAttribute("tromoSM",'av-tab-src')
   available_src_eng_all.forEach(yo=>{
+  let imim$ic=document.createElement('img')
+  imim$ic.src=`visual/UI/icons/icon-search-eng-${yo.replaceAll(" ","-")}.png`
+  imim$ic.setAttribute('tromoSM','im-ic-pref-0')
   let mini0=document.createElement("div")
   mini0.setAttribute('tromoSM','append-all-av')
   all0.appendChild(mini0)
-  mini0.innerText=yo
+  mini0.appendChild(imim$ic)
+  label$0_all=document.createElement('span')
+  label$0_all.innerHTML=yo
+  mini0.appendChild(label$0_all)
   let in_mini0=document.createElement("input")
 
   if(yo==search_eng_default){
@@ -129,13 +135,15 @@ document.querySelector(`[action="file-$-add_search_engines"]`).addEventListener(
   mini0.addEventListener('click',function(){
   in_mini0.click()
 })
- in_mini0.addEventListener('click',function(e){
-    e.stopPropagation()
+ in_mini0.addEventListener('click',function(y){
+    y.stopPropagation()
    if(in_mini0.getAttribute('gurt')=="1"){
     available_src_eng.splice(available_src_eng.indexOf(yo),1)   
 }
    else{
-   available_src_eng.push(yo)
+   if(!available_src_eng.includes(yo)){
+     available_src_eng.push(yo)
+   }
    }
 
  localStorage.setItem('pref-data-search-eng',JSON.stringify(available_src_eng))
