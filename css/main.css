@@ -167,6 +167,11 @@ background-color: var(--element-1-background-color);
     margin: 2px;
     padding: 5px 10px;
     font-weight: 550;
+    display: flex;
+    color: rgb(0, 0, 0);
+    gap: 5px;
+    flex-wrap: nowrap;
+    align-items: center;
     cursor: pointer;
     border-radius: 7px;
     position: relative;
@@ -407,7 +412,9 @@ background-color: var(--element-1-background-color);
     filter:var(--icon-filter-light-themed);
 }
 [tromoSM="search-engine"]:active{
-    transform: scale(1);
+    transform: scale(0.8);
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    filter: blur(2px);
 }
 [tromoSM="search-engine"]:hover{
     background-color: var(--element-1-background-color-action-h);
@@ -420,6 +427,7 @@ background-color: var(--element-1-background-color);
   outline: none;
   cursor: pointer;
   display: flex;
+    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   flex-wrap: nowrap;
   will-change: transform;
   justify-content: center;
@@ -428,7 +436,12 @@ background-color: var(--element-1-background-color);
     background-color: var(--element-1-background-color);
  height: 100%;   
 }
-
+[tromosm="im-ic-pref-0"]{
+    width: 16px;
+    padding: 2px;
+    border-radius: 50px;
+    background-color: var(--element-1-background-color-action-h);
+}
 [tromoSM=di-av-search-eng]{
     display: flex;
     background-color: var(--element-1-background-color-action-h);
