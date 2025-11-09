@@ -41,6 +41,27 @@ document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Sea
     else if(search_eng=="yahoo"){
       window.open(`https://search.yahoo.com/search?p=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
     }
+    else if(search_eng=='yt music'){
+      window.open(`https://music.youtube.com/search?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+   else if(search_eng=='spotify'){
+      window.open(`https://open.spotify.com/search/${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","%20")}`,'_self')
+    }
+   else if(search_eng=='ecosia'){
+      window.open(`https://www.ecosia.org/search?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+   else if(search_eng=='reddit'){
+      window.open(`https://www.reddit.com/search/?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+   else if(search_eng=='quora'){
+      window.open(`https://www.quora.com/search?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+   else if(search_eng=='stack overflow'){
+      window.open(`https://stackoverflow.com/search?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+   else if(search_eng=='twitter'){
+      window.open(`https://x.com/search?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","%20")}`,'_self')
+   }
     else if(search_eng=="url"){
     if(document.querySelector(`[tromoSM="search-in"]`).value.includes(`https://`)){
       window.open(`${document.querySelector(`[tromoSM="search-in"]`).value.slice(8)}`,'_self')
@@ -65,7 +86,7 @@ document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Sea
         lastcall()
  })
 function refresh$$at_c_on_change(){ 
-document.querySelector(`[fill=search-engine]`).src=`visual/UI/icons/icon-search-eng-${search_eng}.png`
+document.querySelector(`[fill='search-engine']`).src=`visual/UI/icons/icon-search-eng-${search_eng.replaceAll(" ","-")}.png`
 document.querySelector(`[fill="search-engine-r"]`).textContent=""
 }
 refresh$$at_c_on_change()
@@ -78,7 +99,7 @@ refresh$$at_c_on_change()
     available_src_eng.forEach(av=>{
      if(av!=search_eng){ 
       ic=document.createElement(`img`)
-      ic.src=`visual/UI/icons/icon-search-eng-${av}.png`
+      ic.src=`visual/UI/icons/icon-search-eng-${av.replaceAll(" ","-")}.png`
       ic.setAttribute(`tromoSM`,`ic-av-search-eng`)
       icc.setAttribute(`tromoSM`,`di-av-search-eng`)
       ic.addEventListener('click',function(){
