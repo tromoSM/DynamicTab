@@ -9,7 +9,5 @@ window.addEventListener(`DOMContentLoaded`,function(){
         document.querySelector(`[tromosm="search-in"]`).focus()
       }
     })
-      document.querySelector(`[tromoSM="search-engine"]`).addEventListener('blur',function(){
-           searchEng$$main()
-  })
+  
 })
