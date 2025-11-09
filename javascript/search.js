@@ -1,6 +1,13 @@
-let available_src_eng=['google','bing',`wikipedia`,`duckduckgo`,`github`,'chatgpt','url']
+let available_src_eng;
+if(localStorage.getItem('pref-data-search-eng')){
+     available_src_eng= JSON.parse(localStorage.getItem('pref-data-search-eng'))
+}
+else{
+   available_src_eng=['google','bing',`wikipedia`,`duckduckgo`,`github`,'chatgpt','url']
+}
 let search$$load = false;
-let search_eng ='google'
+let search_eng_default ='google'
+let search_eng = search_eng_default
 window.addEventListener(`DOMContentLoaded`,function(){
 document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Search with ${search_eng}`)
 
@@ -24,6 +31,15 @@ document.querySelector(`[tromosm="search-in"]`).setAttribute(`placeholder`, `Sea
     }
     else if(search_eng=="chatgpt"){
       window.open(`https://chat.openai.com/?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+    else if(search_eng=="youtube"){
+      window.open(`https://www.youtube.com/results?search_query=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+    else if(search_eng=="instagram"){
+      window.open(`https://www.instagram.com/explore/search/keyword/?q=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
+    }
+    else if(search_eng=="yahoo"){
+      window.open(`https://search.yahoo.com/search?p=${document.querySelector(`[tromoSM="search-in"]`).value.replaceAll(" ","+")}`,'_self')
     }
     else if(search_eng=="url"){
     if(document.querySelector(`[tromoSM="search-in"]`).value.includes(`https://`)){
@@ -65,8 +81,14 @@ refresh$$at_c_on_change()
       ic.src=`visual/UI/icons/icon-search-eng-${av}.png`
       ic.setAttribute(`tromoSM`,`ic-av-search-eng`)
       icc.setAttribute(`tromoSM`,`di-av-search-eng`)
-      ic.setAttribute(`onclick`,`search_eng="${av}"`)
-      document.querySelector(`[tromoSM="search-engine"]`).appendChild(icc)
+      ic.addEventListener('click',function(){
+         search_eng=av
+         console.log('yo')
+      })
+      ic.addEventListener('click',function(){
+         document.querySelector(`[tromoSM="search-engine"]`).click()
+      })
+      document.querySelector(`[tromoSM="inp-wrap"]`).appendChild(icc)
       icc.appendChild(ic)
       o=5
       refresh$$at_c_on_change()
@@ -90,3 +112,4 @@ refresh$$at_c_on_change()
 }
 document.querySelector(`[tromoSM="search-engine"]`).addEventListener('click',searchEng$$main)
 })
+
