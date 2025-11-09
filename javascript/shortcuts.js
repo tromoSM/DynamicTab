@@ -8,6 +8,9 @@ window.addEventListener(`DOMContentLoaded`,function(){
         yo.preventDefault()
         document.querySelector(`[tromosm="search-in"]`).focus()
       }
+      else if(yo.key=="Escape"){
+        document.querySelector(`[tromoSM=full-s-notiff]`).style.display="none"
+      }
     })
   
 })
