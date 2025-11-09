@@ -5,5 +5,7 @@
     "description":"Sets the dynamicTab page instead of about:newtab when opening an new tab",
     "chrome_url_overrides":{
         "newtab":"index.html"
-    }
-}
+   },
+"icons":{
+ "128":"visual/UI/icons/main_128.png"
+}}
