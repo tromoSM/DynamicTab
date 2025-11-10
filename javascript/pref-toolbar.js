@@ -1,4 +1,4 @@
-pref$$setting=['change favicon','change wallpaper','add search engines','wallpaper styling']
+pref$$setting=['change favicon','change wallpaper','add search engines','Glossy reflections','wallpaper styling']
 window.addEventListener('DOMContentLoaded',function(){
 prefTool$$1=document.createElement(`div`)
 prefTool$$3=document.createElement(`div`)
@@ -28,9 +28,15 @@ if(yo.slice(0,6)=="change"){
     irb.setAttribute(`action`,`file-$-${yo.slice(7)}`)
 }
 else if(yo=="wallpaper styling"){
-    irb.innerHTML="not available"
+  irb.innerHTML="not available"
     irb.style.opacity="0.5"
     irb.style.pointerEvents="none"
+    //irb.innerHTML="change styling"
+    //irb.setAttribute(`action`,`file-$-${yo.replaceAll(" ","_")}`)
+}
+else if(yo=="Glossy reflections"){
+    irb.setAttribute(`action`,`file-$-${yo.replaceAll(" ","_")}`)
+  irb.innerHTML="enable"
 }
 else if(yo=="add search engines"){
     irb.innerHTML=search_eng_default.charAt(0).toUpperCase()+search_eng_default.slice(1)
