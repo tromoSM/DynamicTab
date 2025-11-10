@@ -152,6 +152,83 @@ document.querySelector(`[action="file-$-add_search_engines"]`).addEventListener(
   })
 })
  }
+ else if(a=="file-$-wallpaper_styling"){
+    
+document.querySelector(`[action="file-$-wallpaper_styling"]`).addEventListener('click',function(){
+
+  let full_S=document.createElement("div")
+  full_S.setAttribute("tromoSM",'full-s-notiff')
+  let all0=document.createElement("div")
+  document.body.appendChild(full_S)
+  full_S.appendChild(all0)  
+ let close$$$toolpref=document.createElement(`button`)
+ full_S.appendChild(close$$$toolpref)
+ close$$$toolpref.addEventListener("click",function(){
+    full_S.remove()
+ })
+ close$$$toolpref.setAttribute(`tromoSM`,`close$preff`)
+ close$$$toolpref.innerHTML="×"
+ close$$$toolpref.style.display="flex"
+  all0.setAttribute("tromoSM",'av-tab-src')
+  filter$$available.forEach(yo=>{
+  let imim$ic=document.createElement('img')
+  imim$ic.src=`visual/UI/icons/icon-search-eng-${yo.replaceAll(" ","-")}.png`
+  imim$ic.setAttribute('tromoSM','im-ic-pref-0')
+  let mini0=document.createElement("div")
+  mini0.setAttribute('tromoSM','append-all-av')
+  all0.appendChild(mini0)
+  mini0.appendChild(imim$ic)
+  label$0_all=document.createElement('span')
+  label$0_all.innerHTML=yo
+  mini0.appendChild(label$0_all)
+  let in_mini0=document.createElement("input")
+  in_mini0.setAttribute("tromoSM","in-drag-ap")
+  in_mini0.setAttribute("type","range")
+  mini0.appendChild(in_mini0)
+ 
+  })
+  let wall$main=document.createElement("img")
+  wall$main.src=localStorage.getItem("imim_data_wallpaper")
+  all0.appendChild(wall$main)
+  wall$main.setAttribute('tromoSM','style-wall-prf')
+})
+ }
+ else if(a=="file-$-Glossy_reflections"){
+ let action$$gloss=document.querySelector(`[action="file-$-Glossy_reflections"]`)
+ action$$gloss.addEventListener('click',function(){
+ if(localStorage.getItem("ui-ui-data-gloss")){
+  if(localStorage.getItem("ui-ui-data-gloss")=='Nah'){
+  action$$gloss.textContent="disable"
+  localStorage.setItem("ui-ui-data-gloss","Gloss")
+  arr_gloss$$_all.forEach(yo=>{
+    document.querySelectorAll(`[tromoSM='${yo}']`).forEach(yoo=>{
+    yoo.style.boxShadow="5px 5px 5px -5px rgba(255, 255, 255, 0.39) inset, -5px -5px 5px -5px rgba(255, 255, 255, 0.39) inset, 0px 0px 15px rgba(0, 0, 0, 0.329)"
+    })
+  })
+  }
+  else{
+  localStorage.setItem("ui-ui-data-gloss","Nah")
+  action$$gloss.textContent="enable"
+  arr_gloss$$_all.forEach(yo=>{
+    document.querySelectorAll(`[tromoSM='${yo}']`).forEach(yoo=>{
+    yoo.style.boxShadow="none"
+    })
+  })
+  }
+}
+else{
+  localStorage.setItem("ui-ui-data-gloss","Gloss")
+  arr_gloss$$_all.forEach(yo=>{
+    document.querySelectorAll(`[tromoSM='${yo}']`).forEach(yoo=>{
+    yoo.style.boxShadow="5px 5px 5px -5px rgba(255, 255, 255, 0.39) inset, -5px -5px 5px -5px rgba(255, 255, 255, 0.39) inset, 0px 0px 15px rgba(0, 0, 0, 0.329)"
+    })
+  })
+}
+})
+ }
+ 
+  
+
 
  })
 })
