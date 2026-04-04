@@ -3,3 +3,5 @@
 >[!note]
 >DynamicTab currently doesnt support webkit based browsers nor mobile browser. Webkit support will be available soon.
 - [preview](https://tromosm.github.io/DynamicTab/)
+
+##### [send feedback or request features](https://tromosm.ct.ws/?feedback=true)
